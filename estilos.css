@@ -335,3 +335,38 @@ form button[type="button"]:hover {
 #opcionesPago button:hover {
   background-color: #218838;
 }
+/* Validación visual */
+input:invalid {
+  border-color: #dc3545;
+  background-color: #fff5f5;
+}
+
+input:valid {
+  border-color: #28a745;
+  background-color: #f0fff0;
+}
+
+/* Íconos dentro de campos */
+.input-icon {
+  position: relative;
+}
+
+.input-icon input {
+  padding-left: 40px;
+}
+
+.input-icon i {
+  position: absolute;
+  top: 50%;
+  left: 12px;
+  transform: translateY(-50%);
+  color: #888;
+  font-size: 18px;
+}
+
+/* Animaciones suaves */
+form input,
+form select,
+form button {
+  transition: all 0.3s ease-in-out;
+}
