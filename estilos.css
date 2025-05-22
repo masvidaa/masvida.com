@@ -216,3 +216,82 @@ footer {
     width: 100%;
   }
 }
+button {
+  background: linear-gradient(135deg, #2bb673, #1e8e5f);
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: 'Poppins', sans-serif;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+button:hover {
+  background: linear-gradient(135deg, #1e8e5f, #2bb673);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
+}
+
+button:active {
+  transform: translateY(0);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+}
+.boton {
+  display: inline-block;
+  background: linear-gradient(135deg, #2bb673, #1e8e5f);
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: 'Poppins', sans-serif;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.boton:hover {
+  background: linear-gradient(135deg, #1e8e5f, #2bb673);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
+}
+
+.boton:active {
+  transform: translateY(0);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+}
+/* Estilo moderno para todos los botones */
+button {
+  background: linear-gradient(to right, #2bb673, #1eaa59);
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  margin: 10px 0;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+/* Hover suave */
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+  background: linear-gradient(to right, #1eaa59, #2bb673);
+}
+
+/* Botones secundarios (como cancelar) */
+button.cancelar {
+  background: #ccc;
+  color: #333;
+}
+
+button.cancelar:hover {
+  background: #bbb;
+}
