@@ -6,6 +6,7 @@
   <title>+Vida - Servicios Médicos</title>
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="estilos.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
     .modal {
       position: fixed;
@@ -153,21 +154,32 @@
   <input type="hidden" name="_captcha" value="false">
   <input type="hidden" name="_next" value="https://masvidaa.github.io/masvida.com/gracias.html">
 
-   <!-- Campos del formulario -->
-    <label for="nombre-completo">Nombre Completo:</label>
-    <input type="text" id="nombre-completo" name="nombre_completo" required />
+   <!-- Campo Nombre -->
+    <div class="input-icon">
+      <i class="fas fa-user"></i>
+      <input type="text" id="nombre-completo" name="nombre_completo" placeholder="Nombre completo" required />
+    </div>
 
-    <label for="fecha-nacimiento">Fecha de Nacimiento:</label>
-    <input type="date" id="fecha-nacimiento" name="fecha_nacimiento" required />
+    <!-- Campo Fecha de Nacimiento -->
+    <div class="input-icon">
+      <i class="fas fa-calendar-alt"></i>
+      <input type="date" id="fecha-nacimiento" name="fecha_nacimiento" required />
+    </div>
 
-    <label for="telefono">Número de Contacto:</label>
-    <input type="tel" id="telefono" name="telefono" required />
+    <!-- Campo Teléfono -->
+    <div class="input-icon">
+      <i class="fas fa-phone"></i>
+      <input type="tel" id="telefono" name="telefono" placeholder="Ej. 5512345678" required />
+    </div>
 
-    <label for="email">Correo Electrónico:</label>
-    <input type="email" id="email" name="email" required />
+    <!-- Campo Correo -->
+    <div class="input-icon">
+      <i class="fas fa-envelope"></i>
+      <input type="email" id="email" name="email" placeholder="correo@ejemplo.com" required />
+    </div>
 
     <button type="submit">Registrar</button>
-
+    
     <!-- Opciones de pago ocultas hasta que se registre -->
     <div id="opcionesPago" style="margin-top: 20px;"></div>
       <p><strong>Selecciona tu plan de pago:</strong></p>
