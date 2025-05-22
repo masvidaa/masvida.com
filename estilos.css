@@ -221,3 +221,50 @@ footer {
     position: static;
   }
 }
+@media screen and (max-width: 768px) {
+  body {
+    padding: 0 10px;
+  }
+
+  .logo {
+    height: 60px;
+  }
+
+  header, footer {
+    padding: 15px 0;
+  }
+
+  .slogan {
+    font-size: 1em;
+  }
+
+  main {
+    padding: 10px 0;
+  }
+
+  form {
+    padding: 15px;
+  }
+
+  .modal-content {
+    padding: 15px;
+  }
+
+  h2 {
+    font-size: 1.2em;
+  }
+
+  form label {
+    font-size: 0.95em;
+  }
+
+  form input,
+  form textarea,
+  form select {
+    font-size: 1em;
+  }
+
+  .menu > li > a {
+    padding: 10px 15px;
+  }
+}
