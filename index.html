@@ -168,7 +168,7 @@
     <button type="submit">Registrar</button>
 
     <!-- Opciones de pago ocultas hasta que se registre -->
-    <div id="opcionesPago" class="hidden" style="margin-top: 20px;">
+    <div id="opcionesPago" style="margin-top: 20px;"></div>
       <p><strong>Selecciona tu plan de pago:</strong></p>
       <a href="https://buy.stripe.com/9B6fZhgzUdFWeqKcwSbMQ02" target="_blank">
         <button type="button">Pagar Plan Mensual - $1,199 MXN</button>
@@ -269,35 +269,5 @@
       modalPago.classList.add('hidden');
     }
   </script>
-  <script>
-  const form = document.getElementById('formRegistro');
-  const opcionesPago = document.getElementById('opcionesPago');
-
-  form.addEventListener('submit', function (event) {
-    event.preventDefault(); // Evita redireccionar o recargar
-
-    // Mostrar opciones de pago
-    opcionesPago.classList.remove('hidden');
-
-    // Deshabilitar el botón de registro
-    form.querySelector('button[type="submit"]').disabled = true;
-
-    // Enviar los datos con fetch a FormSubmit
-    fetch("https://formsubmit.co/ajax/ricardo.castro.aceves@gmail.com", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        nombre_completo: form['nombre_completo'].value,
-        fecha_nacimiento: form['fecha_nacimiento'].value,
-        telefono: form['telefono'].value,
-        email: form['email'].value
-      })
-    }).then(response => {
-      console.log("Registro enviado correctamente");
-    }).catch(error => {
-      console.error("Error al enviar el registro:", error);
-    });
-  });
-</script>
 </body>
 </html>
