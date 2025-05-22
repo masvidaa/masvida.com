@@ -152,36 +152,38 @@
   <input type="hidden" name="_captcha" value="false">
   <input type="hidden" name="_next" value="https://masvidaa.github.io/masvida.com/gracias.html">
 
-  <!-- Campos del formulario -->
-  <label for="nombre-completo">Nombre Completo:</label>
-  <input type="text" id="nombre-completo" name="nombre_completo" required />
+  < <!-- Campos del formulario -->
+    <label for="nombre-completo">Nombre Completo:</label>
+    <input type="text" id="nombre-completo" name="nombre_completo" required />
 
-  <label for="fecha-nacimiento">Fecha de Nacimiento:</label>
-  <input type="date" id="fecha-nacimiento" name="fecha_nacimiento" required />
+    <label for="fecha-nacimiento">Fecha de Nacimiento:</label>
+    <input type="date" id="fecha-nacimiento" name="fecha_nacimiento" required />
 
-  <label for="telefono">Número de Contacto:</label>
-  <input type="tel" id="telefono" name="telefono" required />
+    <label for="telefono">Número de Contacto:</label>
+    <input type="tel" id="telefono" name="telefono" required />
 
-  <label for="email">Correo Electrónico:</label>
-  <input type="email" id="email" name="email" required />
+    <label for="email">Correo Electrónico:</label>
+    <input type="email" id="email" name="email" required />
 
-  <button type="submit">Registrar</button>
-  <div id="opcionesPago" class="hidden">
-  <p><strong>Selecciona tu plan de pago:</strong></p>
-  <a href="https://buy.stripe.com/9B6fZhgzUdFWeqKcwSbMQ02" target="_blank">
-    <button type="button">Pagar Plan Mensual - $1,199 MXN</button>
-  </a>
-  <a href="https://buy.stripe.com/7sYeVdabw1Xe6Yi68ubMQ03" target="_blank">
-    <button type="button">Pagar Plan Trimestral - $3,600 MXN</button>
-  </a>
-  <a href="https://buy.stripe.com/cNi7sL1F0cBSeqKdAWbMQ04" target="_blank">
-    <button type="button">Pagar Plan Semestral - $7,200 MXN</button>
-  </a>
-  <a href="https://buy.stripe.com/3cI4gzabw7hy5Ue2WibMQ05" target="_blank">
-    <button type="button">Pagar Membresía Premium - $2,200 MXN</button>
-  </a>
-</div>
-</form>
+    <button type="submit">Registrar</button>
+
+    <!-- Opciones de pago ocultas hasta que se registre -->
+    <div id="opcionesPago" class="hidden" style="margin-top: 20px;">
+      <p><strong>Selecciona tu plan de pago:</strong></p>
+      <a href="https://buy.stripe.com/9B6fZhgzUdFWeqKcwSbMQ02" target="_blank">
+        <button type="button">Pagar Plan Mensual - $1,199 MXN</button>
+      </a>
+      <a href="https://buy.stripe.com/7sYeVdabw1Xe6Yi68ubMQ03" target="_blank">
+        <button type="button">Pagar Plan Trimestral - $3,600 MXN</button>
+      </a>
+      <a href="https://buy.stripe.com/cNi7sL1F0cBSeqKdAWbMQ04" target="_blank">
+        <button type="button">Pagar Plan Semestral - $7,200 MXN</button>
+      </a>
+      <a href="https://buy.stripe.com/3cI4gzabw7hy5Ue2WibMQ05" target="_blank">
+        <button type="button">Pagar Membresía Premium - $2,200 MXN</button>
+      </a>
+    </div>
+  </form>
 </section>
   </main>
 
@@ -267,5 +269,35 @@
       modalPago.classList.add('hidden');
     }
   </script>
+  <script>
+  const form = document.getElementById('formRegistro');
+  const opcionesPago = document.getElementById('opcionesPago');
+
+  form.addEventListener('submit', function (event) {
+    event.preventDefault(); // Evita redireccionar o recargar
+
+    // Mostrar opciones de pago
+    opcionesPago.classList.remove('hidden');
+
+    // Deshabilitar el botón de registro
+    form.querySelector('button[type="submit"]').disabled = true;
+
+    // Enviar los datos con fetch a FormSubmit
+    fetch("https://formsubmit.co/ajax/ricardo.castro.aceves@gmail.com", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        nombre_completo: form['nombre_completo'].value,
+        fecha_nacimiento: form['fecha_nacimiento'].value,
+        telefono: form['telefono'].value,
+        email: form['email'].value
+      })
+    }).then(response => {
+      console.log("Registro enviado correctamente");
+    }).catch(error => {
+      console.error("Error al enviar el registro:", error);
+    });
+  });
+</script>
 </body>
 </html>
