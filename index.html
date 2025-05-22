@@ -147,47 +147,33 @@
     </section>
 
     <section id="registro">
-      <h2>Registro del Paciente</h2>
-      <form id="registro-form" action="https://formsubmit.co/ricardo.castro.aceves%40gmail.com" method="POST">
-  <input type="hidden" name="_captcha" value="false">
-  <input type="hidden" name="_next" value="gracias.html">
+  <h2>Registro del Paciente</h2>
+  <form action="https://formsubmit.co/ricardo.castro.aceves%40gmail.com" method="POST">
+    <!-- FormSubmit hidden fields -->
+    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_next" value="https://masvidaa.github.io/masvida.com/gracias.html">
 
-  <label for="nombre-completo">Nombre Completo:</label>
-  <input type="text" id="nombre-completo" name="nombre_completo" required />
+    <label for="nombre-completo">Nombre Completo:</label>
+    <input type="text" id="nombre-completo" name="nombre_completo" required />
 
-  <label for="fecha-nacimiento">Fecha de Nacimiento:</label>
-  <input type="date" id="fecha-nacimiento" name="fecha_nacimiento" required />
+    <label for="fecha-nacimiento">Fecha de Nacimiento:</label>
+    <input type="date" id="fecha-nacimiento" name="fecha_nacimiento" required />
 
-  <label for="enfermedades-cronicas">Enfermedades Crónicas:</label>
-  <textarea id="enfermedades-cronicas" name="enfermedades_cronicas" rows="4"></textarea>
+    <label for="enfermedades-cronicas">Enfermedades Crónicas:</label>
+    <textarea id="enfermedades-cronicas" name="enfermedades_cronicas" rows="4"></textarea>
 
-  <label for="telefono">Número de Contacto:</label>
-  <input type="tel" id="telefono" name="telefono" required />
+    <label for="telefono">Número de Contacto:</label>
+    <input type="tel" id="telefono" name="telefono" required />
 
-  <label for="email">Correo Electrónico:</label>
-  <input type="email" id="email" name="email" required />
+    <label for="email">Correo Electrónico:</label>
+    <input type="email" id="email" name="email" required />
 
-  <label for="comentarios">Comentarios Adicionales:</label>
-  <textarea id="comentarios" name="comentarios" rows="4"></textarea>
+    <label for="comentarios">Comentarios Adicionales:</label>
+    <textarea id="comentarios" name="comentarios" rows="4"></textarea>
 
-  <button type="submit">Registrar</button>
- <div id="opcionesPago" class="hidden">
-  <p><strong>Selecciona tu plan de pago:</strong></p>
-  <a href="https://buy.stripe.com/9B6fZhgzUdFWeqKcwSbMQ02" target="_blank">
-    <button type="button">Pagar Plan Mensual - $1,199 MXN</button>
-  </a>
-  <a href="https://buy.stripe.com/7sYeVdabw1Xe6Yi68ubMQ03" target="_blank">
-    <button type="button">Pagar Plan Trimestral - $3,600 MXN</button>
-  </a>
-  <a href="https://buy.stripe.com/cNi7sL1F0cBSeqKdAWbMQ04" target="_blank">
-    <button type="button">Pagar Plan Semestral - $7,200 MXN</button>
-  </a>
-  <a href="https://buy.stripe.com/3cI4gzabw7hy5Ue2WibMQ05" target="_blank">
-    <button type="button">Pagar Membresía Premium - $2,200 MXN</button>
-  </a>
-</div>
-</form>
-    </section>
+    <button type="submit">Registrar</button>
+  </form>
+</section>
   </main>
 
   <footer>
@@ -272,26 +258,5 @@
       modalPago.classList.add('hidden');
     }
   </script>
-<script>
-  const form = document.getElementById('registro-form');
-  const opcionesPago = document.getElementById('opcionesPago');
-
-  form.addEventListener('submit', function(event) {
-    event.preventDefault(); // Evita envío automático
-
-    const nombre = document.getElementById('nombre-completo').value.trim();
-    const fecha = document.getElementById('fecha-nacimiento').value.trim();
-    const telefono = document.getElementById('telefono').value.trim();
-    const email = document.getElementById('email').value.trim();
-
-    if (nombre && fecha && telefono && email) {
-      opcionesPago.classList.remove('hidden');
-      alert('¡Registro exitoso! Ahora puedes elegir un plan de pago.');
-      form.submit(); // Envía el formulario a FormSubmit
-    } else {
-      alert('Por favor completa todos los campos obligatorios antes de continuar.');
-    }
-  });
-</script>
 </body>
 </html>
