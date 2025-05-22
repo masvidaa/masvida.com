@@ -4,8 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>+Vida - Servicios Médicos</title>
-  <link rel="stylesheet" href="estilos.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="estilos.css">
   <style>
     .modal {
       position: fixed;
@@ -157,19 +157,19 @@
     <label for="nombre-completo">Nombre Completo:</label>
     <input type="text" id="nombre-completo" name="nombre_completo" required />
 
-    <label for="fecha-nacimiento">Fecha de Nacimiento:</label>
-    <input type="date" id="fecha-nacimiento" name="fecha_nacimiento" required />
+     <label for="fecha">Fecha de Nacimiento:</label>
+      <input type="date" id="fecha" name="fecha" required>
 
-    <label for="telefono">Número de Contacto:</label>
-    <input type="tel" id="telefono" name="telefono" required />
+      <label for="telefono">Número de Contacto:</label>
+      <input type="tel" id="telefono" name="telefono" placeholder="Ej. 55 1234 5678" required>
 
-    <label for="email">Correo Electrónico:</label>
-    <input type="email" id="email" name="email" required />
+      <label for="email">Correo Electrónico:</label>
+      <input type="email" id="email" name="email" placeholder="Ej. correo@ejemplo.com" required>
 
-    <button type="submit">Registrar</button>
+      <button type="submit">Registrar</button>
 
     <!-- Opciones de pago ocultas hasta que se registre -->
-    <div id="opcionesPago" style="margin-top: 20px;"></div>
+     <div id="opcionesPago">
       <p><strong>Selecciona tu plan de pago:</strong></p>
       <a href="https://buy.stripe.com/9B6fZhgzUdFWeqKcwSbMQ02" target="_blank">
         <button type="button">Pagar Plan Mensual - $1,199 MXN</button>
@@ -184,8 +184,7 @@
         <button type="button">Pagar Membresía Premium - $2,200 MXN</button>
       </a>
     </div>
-  </form>
-</section>
+  </section>
   </main>
 
   <footer>
@@ -269,6 +268,13 @@
       alert('Pago realizado con éxito. ¡Gracias por unirte a +Vida!');
       modalPago.classList.add('hidden');
     }
+  </script>
+
+<script>
+    document.getElementById('registro-form').addEventListener('submit', function(event) {
+      event.preventDefault();
+      document.getElementById('opcionesPago').style.display = 'block';
+    });
   </script>
 </body>
 </html>
