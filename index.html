@@ -39,11 +39,18 @@
   </style>
 </head>
 <body>
+  
   <header>
     <div class="logo-titulo">
-      <img src="logo-vida.png" alt="Logo +Vida" class="logo" />
-    </div>
-    <p class="slogan">Tu salud y tu tiempo son valiosos para nosotros. Con +Vida no hay deducibles, pagos extras ni trámites engorrosos.</p>
+    <img src="logo-vida.png" alt="Logo +Vida" class="logo" />
+  </div>
+  <p class="slogan">Tu salud y tu tiempo son valiosos para nosotros. Con +Vida no hay deducibles, pagos extras ni trámites engorrosos.</p>
+  
+  <div class="contacto-vida">
+    <strong>Contacto +Vida:</strong> 
+    <a href="tel:+525511064202" class="numero-contacto">55 11 06 42 02</a> | 
+    <a href="https://wa.me/525511064202" target="_blank" rel="noopener" class="whatsapp-contacto">WhatsApp</a>
+  </div>
   </header>
 
   <nav class="navbar">
@@ -74,7 +81,7 @@
     <section id="servicios" class="info">
       <h2>1. Servicios Incluidos</h2>
       <ul>
-        <li>Consulta o urgencia mensual en Star Médica o San Ángel Inn.</li>
+        <li>Consulta o urgencia mensual en Star Médica o San Ángel Inn en CDMX y EDOMEX.</li>
         <li>Estudios:
           <ul>
             <li>Hemograma completo</li>
@@ -91,7 +98,20 @@
         <li>Tarjeta personalizada para acceso a hospitales afiliados.</li>
         <li>Urgencias menores: heridas abiertas, fracturas simples, estudios mencionados.</li>
       </ul>
-      <p><strong>Importante:</strong> Urgencias mayores se canalizan a IMSS o seguro privado.</p>
+      <p><strong>Importante:</strong> Urgencias mayores se canalizan a IMSS o seguro de gastos medicos mayores.</p>
+
+    <section id="emergencias" class="emergencias">
+  <div class="contenedor">
+    <h2>Emergencias fuera de la ciudad</h2>
+    <p>
+      En caso de que el usuario requiera atención médica urgente mientras se encuentre fuera de CDMX o Área metropolitana, podrá acudir a cualquier hospital privado dentro del territorio nacional, exclusivamente para atención de urgencias menores. Esta cobertura solo aplica dentro de la República Mexicana y deberá ser reportada a +Vida mediante el número de contacto indicado en su tarjeta de membresía o WhatsApp antes de ingresar al hospital.
+    </p>
+    <p>
+      El usuario deberá proporcionar su nombre completo, número de cliente, así como el nombre del hospital y la sucursal a la que ingresó. Esta disposición incluye únicamente los servicios habituales de urgencias menores (suturas, yesos, estudios básicos, honorarios, material médico), sin incluir atención por enfermedades graves, cirugías mayores o internamientos prolongados. No se cubrirán gastos derivados de medicamentos, cirugías u hospitalizaciones extensas.
+    </p>
+  </div>
+</section>
+      
     </section>
 
     <section id="precios" class="info">
@@ -232,7 +252,7 @@
       <button onclick="cerrarPago()">Cancelar</button>
     </div>
   </div>
-
+ 
   <script>
     const btnAbrirContrato = document.getElementById('btnAbrirContrato');
     const modalContrato = document.getElementById('modalContrato');
